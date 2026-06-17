@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserManagementAPI</name>
+    </assembly>
+    <members>
+        <member name="M:UserManagementAPI.Controllers.UsersController.GetUsers">
+            <summary>
+            Retrieve all users
+            </summary>
+            <returns>List of all active users</returns>
+        </member>
+        <member name="M:UserManagementAPI.Controllers.UsersController.GetUser(System.Int32)">
+            <summary>
+            Retrieve a specific user by ID
+            </summary>
+            <param name="id">User ID</param>
+            <returns>User details if found</returns>
+        </member>
+        <member name="M:UserManagementAPI.Controllers.UsersController.CreateUser(UserManagementAPI.Models.CreateUserRequest)">
+            <summary>
+            Add a new user
+            </summary>
+            <param name="request">User creation request</param>
+            <returns>Created user</returns>
+        </member>
+        <member name="M:UserManagementAPI.Controllers.UsersController.UpdateUser(System.Int32,UserManagementAPI.Models.UpdateUserRequest)">
+            <summary>
+            Update an existing user's details
+            </summary>
+            <param name="id">User ID</param>
+            <param name="request">User update request</param>
+            <returns>Updated user</returns>
+        </member>
+        <member name="M:UserManagementAPI.Controllers.UsersController.DeleteUser(System.Int32)">
+            <summary>
+            Remove a user by ID (soft delete)
+            </summary>
+            <param name="id">User ID</param>
+            <returns>Success message</returns>
+        </member>
+        <member name="T:UserManagementAPI.Exceptions.UserNotFoundException">
+            <summary>
+            Exception thrown when a user is not found
+            </summary>
+        </member>
+        <member name="T:UserManagementAPI.Exceptions.InvalidUserDataException">
+            <summary>
+            Exception thrown when user data is invalid
+            </summary>
+        </member>
+        <member name="T:UserManagementAPI.Exceptions.DuplicateEmailException">
+            <summary>
+            Exception thrown when email already exists
+            </summary>
+        </member>
+        <member name="T:UserManagementAPI.Exceptions.ValidationException">
+            <summary>
+            Exception thrown for validation errors
+            </summary>
+        </member>
+        <member name="T:UserManagementAPI.Middleware.ExceptionHandlingMiddleware">
+            <summary>
+            Global exception handling middleware
+            </summary>
+        </member>
+        <member name="T:UserManagementAPI.Middleware.ExceptionHandlingExtensions">
+            <summary>
+            Extension method to configure exception handling middleware
+            </summary>
+        </member>
+        <member name="T:UserManagementAPI.Models.ErrorResponse">
+            <summary>
+            Standard API error response
+            </summary>
+        </member>
+        <member name="T:UserManagementAPI.Validators.IUserValidator">
+            <summary>
+            Validator for user data
+            </summary>
+        </member>
+    </members>
+</doc>

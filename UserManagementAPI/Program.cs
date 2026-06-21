@@ -50,6 +50,15 @@ var app = builder.Build();
 // Use global exception handling middleware
 app.UseExceptionHandlingMiddleware();
 
+// Request logging middleware
+app.UseRequestLogging();
+
+// API key authentication in non-development environments (keeps Swagger usable locally)
+if (!app.Environment.IsDevelopment())
+{
+    app.UseApiKeyAuthentication();
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
